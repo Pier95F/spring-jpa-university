@@ -22,7 +22,7 @@ public class Departments {
 	private String website;
 	
 	@Column(name = "head_of_department")
-	private String head;
+	private String headOfDepartment;
 	
 	// Getter e setter
 
@@ -74,12 +74,12 @@ public class Departments {
 		this.website = website;
 	}
 
-	public String getHead() {
-		return head;
+	public String getHeadOfDepartment() {
+		return headOfDepartment;
 	}
 
-	public void setHead(String head) {
-		this.head = head;
+	public void setHeadOfDepartment(String headOfDepartment) {
+		this.headOfDepartment = headOfDepartment;
 	}
 	
 	
