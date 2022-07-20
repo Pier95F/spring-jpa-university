@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:replace="fragments :: risorse-head"></th:block>
+    <title>Teachers detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  
+  <body>
+  <div class="container">
+    <span th:text:"${teachersList}"></span>
+    	<table class="table">
+    		<tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th>Indirizzo ufficio</th>
+                <th>Numero ufficio</th>
+            </tr>
+    		<tr th:each="tea: ${teachersList}">
+    			<td th:text="${tea.name}"></td>
+    			<td th:text="${tea.surname}"></td>
+    			<td th:text="${tea.phone}"></th>
+    			<td th:text="${tea.email}"></th>
+    			<td th:text="${tea.officeAddress}"></th>
+    			<td th:text="${tea.officeNumber}"></th>
+    		</tr>
+    	</table>
+    </div>
+	<div class="container">
+    	<table class="table table-striped border">
+        	<thead>
+            	<tr>
+                	<th>Nome</th>
+                	<th>Descrizione</th>
+                	<th>Periodo</th>
+                	<th>Anno</th>
+                	<th>CFU</th>
+                	<th>Sito</th>
+            	</tr>
+        	</thead>
+        	<tbody>
+           		<tr th:each="corso : ${teachersList.courses}">
+                	<td th:text="${corso.name}"></td>
+                	<td th:text="${corso.description}"></td>
+                	<td th:text="${corso.period}"></td>
+                	<td th:text="${corso.year}"></td>
+                	<td th:text="${corso.cfu}"></td>
+                	<td th:text="${corso.website != null} ? ${corso.website} : 'Non inserito'">Non inserito</td>
+
+            	</tr>
+        	</tbody>
+    	</table>
+	</div> 
+  </body>
+</html>

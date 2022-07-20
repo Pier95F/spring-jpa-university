@@ -19,11 +19,6 @@ public class DepartmentsController {
 	@Autowired
 	private DepartmentsRepository repo;
 	
-	@GetMapping
-	public String home (Model model)
-	{
-		return "home";
-	}
 
 	@GetMapping("/departments")
 	public String departments(Model model) {

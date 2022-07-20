@@ -9,7 +9,7 @@
   <div th:replace="fragments :: navbar('current')"></div>
     <h1 class="text-center mt-3 mb-3">Teacher list</h1>
     
-    <table class="table mt-3 mb-5">
+    <table class="table table-striped border">
 			<thead>
 				<tr>
 					<th>Nome</th>
@@ -21,12 +21,16 @@
 			</thead>
 			<tbody>
 				<tr th:each="teachers: ${teachersList}">
-					<td th:text="${teachers.nameSurname()}"></td>
-					<td th:text="${teachers.getPhone()}"></td>
+				
+				 <td>
+      			<a th:href="@{|/teachers/${teachers.Id}|}" th:text="${teachers.nameSurname()}"></a>
+     			</td>
+  					<td th:text="${teachers.getPhone()}"></td>
 					<td th:text="${teachers.getEmail()}"></td>
 					<td th:text="${teachers.getOfficeAddress()}"></td>
 					<td th:text="${teachers.getOfficeNumber()}"></td>	
 				</tr>
+					
 			</tbody>
 		</table>
 		
